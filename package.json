@@ -1,0 +1,31 @@
+{
+  "name": "tjs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.2.2",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poulpinounette/tjs.git"
+  },
+  "author": "Poulpinounette",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Poulpinounette/tjs/issues"
+  },
+  "homepage": "https://github.com/Poulpinounette/tjs#readme",
+  "dependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
