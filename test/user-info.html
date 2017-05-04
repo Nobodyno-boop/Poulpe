@@ -1,0 +1,45 @@
+<tjs-render>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.css">
+    <script src="https://gist.githubusercontent.com/Poulpinounette/a00c2f74960fdd31c6e09d23a3026c97/raw/b5e53aed90cfd6672f4e55fb51334f1fb45de662/tjs.js" charset="utf-8"></script>
+    <script charset="utf-8">
+      tjs.setData({"name": "master", "desc": "I'm a poulpe", "icon": "user", "fc"; "669"}).render();
+
+    </script>
+  </head>
+  <body>
+
+      <div class="ui link cards">
+        <div class="card">
+          <div class="image">
+            <img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+          </div>
+          <div class="content">
+            <div class="header">{{name}}</div>
+            <div class="meta">
+              <a>Friends</a>
+            </div>
+            <div class="description">
+            {{desc}}
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              Joined in 2013
+            </span>
+            <span>
+              <i class="{{icon}} icon"></i>
+              {{fc}} Friends
+            </span>
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
+</tjs-render>
