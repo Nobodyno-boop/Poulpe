@@ -7,8 +7,8 @@ Simple Data binding Javascript Project
   - Simple and speed.
 
 # How to use
-import the code for your site:
-[poulpe.min.js](https://unpkg.com/poulpe@0.1.21/dist/poulpe.min.js)
+import for the latest version
+[poulpe.min.js](https://unpkg.com/poulpe@0.1.22/dist/poulpe.min.js)
 
 
 *HTML code*.
