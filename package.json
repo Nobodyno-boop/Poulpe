@@ -1,0 +1,27 @@
+{
+  "name": "tjs",
+  "version": "0.1.2",
+  "description": "TJS === Data binding Javascript Project",
+  "main": "./src/main.js",
+  "dependencies": {},
+  "scripts": {
+    "dev": "gulp"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poulpinounette/tjs.git"
+  },
+  "author": "Poulpinounette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poulpinounette/tjs/issues"
+  },
+  "homepage": "https://github.com/Poulpinounette/tjs#readme"
+}
