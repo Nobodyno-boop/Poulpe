@@ -9,10 +9,10 @@ const browserify = require("browserify"),
     watchify     = require("watchify"),
 
     src = {
-        js: "./src/main.js"
+        js: "./src/index.js"
     },
     dest = {
-        js: "./build/"
+        js: "./dist/"
     };
 
 let bundler;
@@ -34,7 +34,7 @@ function bundle() {
         _ = bundler
             .bundle()
             .on("error", util.log.bind(util, "Browserify Error"))
-            .pipe(source("main.js"))
+            .pipe(source("poulpe.js"))
             .pipe(buffer())
             .pipe(gulp.dest(dest.js)),
         time = new Date().getTime() - start;

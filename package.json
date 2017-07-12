@@ -1,8 +1,23 @@
 {
-  "name": "tjs",
-  "version": "0.1.2",
-  "description": "TJS === Data binding Javascript Project",
+  "name": "poulpe",
+  "version": "0.1.21",
+  "description": "poulpe || Data binding Javascript Project",
   "main": "./src/main.js",
+  "bin": {
+    "poulpe": "./src/index.js"
+  },
+  "keywords": [
+    "poulpe",
+    "poulpi"
+  ],
+  "files": [
+    "src/",
+    "dist/",
+    "test/",
+    "README.md",
+    "gulpfile.js",
+    "package.json"
+  ],
   "dependencies": {},
   "scripts": {
     "dev": "gulp"
@@ -14,14 +29,20 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Poulpinounette/tjs.git"
   },
-  "author": "Poulpinounette",
+  "author": "poulpi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Poulpinounette/tjs/issues"
   },
-  "homepage": "https://github.com/Poulpinounette/tjs#readme"
+  "homepage": "https://github.com/Poulpinounette/tjs#readme",
+  "directories": {
+    "test": "test"
+  }
 }
