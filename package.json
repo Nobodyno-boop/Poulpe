@@ -34,14 +34,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Poulpinounette/tjs.git"
+    "url": "git+https://github.com/Poulpinounette/poulpe.git"
   },
   "author": "poulpi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Poulpinounette/tjs/issues"
+    "url": "https://github.com/Poulpinounette/poulpe/issues"
   },
-  "homepage": "https://github.com/Poulpinounette/tjs#readme",
+  "homepage": "https://github.com/Poulpinounette/poulpe#readme",
   "directories": {
     "test": "test"
   }

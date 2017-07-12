@@ -5,9 +5,11 @@ Simple Data binding Javascript Project
 # Feature
   - Data binding with id 
   - Simple and speed.
-  - 
 
 # How to use
+import the code for your site:
+[poulpe.min.js](https://unpkg.com/poulpe@0.1.21/dist/poulpe.min.js)
+
 
 *HTML code*.
 ```
