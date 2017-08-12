@@ -7,6 +7,8 @@ const browserify = require("browserify"),
     source       = require("vinyl-source-stream"),
     util         = require("gulp-util"),
     watchify     = require("watchify"),
+    server = require('gulp-server-livereload'),
+
 
     src = {
         js: "./src/index.js"
@@ -48,8 +50,22 @@ gulp.task("js", bundles.bind(null));
 
 gulp.task("watch", function () {
     bundles("watch");
-
+    // livereload.listen({basePath: __dirname})
+    serve()
     bundler.on("update", bundle.bind(null));
 });
 
-gulp.task("default", ["watch", "js"]);
+
+function serve(){
+  gulp.src(__dirname)
+    .pipe(server({
+      livereload: true,
+      directoryListing: true
+    }));
+}
+
+gulp.task("server", function(){
+    serve()
+})
+
+  gulp.task("default", ["watch", "js"]);

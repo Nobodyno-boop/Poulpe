@@ -1,4 +1,4 @@
-Poulpe
+Poulpe 
 ===
 Simple Data binding Javascript Project
 
@@ -8,33 +8,32 @@ Simple Data binding Javascript Project
 
 # How to use
 import for the latest version
-[poulpe.min.js](https://unpkg.com/poulpe@0.1.22/dist/poulpe.min.js)
+[poulpe.min.js](https://unpkg.com/poulpe@latest/dist/poulpe.min.js)
 
 
-*HTML code*.
+*HTML code*.<br />
 ```
 <div id="#e"> {{name}}</div>
 ```
 
-*JavaScript code*.
+*JavaScript code*. 
 ```
-var tjs = new tjs();
-tjs.run({
+var poulpe = new poulpe();
+poulpe.run({
 	el: "#e",
 	data: {
 	 "name": "Poulpi"
 	}
 });
 ```
+<br /><br /><br />
 
-
- Change log
- ----------
- - **V0.1.2**
-    - added module support and browser.
-    - Clean code.
+  Other
+===
+ [change log](https://github.com/Poulpinounette/Poulpe/blob/master/CHANGELOG.md)
 
 Todo
 - *add "special" use for nodejs*
 - *Support XHR request.*
 - *Debug mod*
+- *Event system*

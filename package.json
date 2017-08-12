@@ -1,8 +1,8 @@
 {
   "name": "poulpe",
-  "version": "0.1.21",
+  "version": "0.1.23",
   "description": "poulpe || Data binding Javascript Project",
-  "main": "./src/main.js",
+  "main": "./src/index.js",
   "bin": {
     "poulpe": "./src/index.js"
   },
@@ -25,6 +25,7 @@
   "devDependencies": {
     "browserify": "^13.1.0",
     "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.9.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
