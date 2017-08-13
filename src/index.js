@@ -9,6 +9,4 @@ poulpe.prototype.run = function(obj) {
 	render.render();
 };
 
-if(!window.poulpe){window.poulpe = poulpe};
-
-module.exports = poulpe
+module.exports = new poulpe()

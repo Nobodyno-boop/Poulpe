@@ -9,10 +9,8 @@ poulpe.prototype.run = function(obj) {
 	search.s();
 	render.render();
 };
-
-if(!window.poulpe){window.poulpe = poulpe};
-
-module.exports = poulpe
+if(!window.poulpe){window.poulpe = poulpe;}
+module.exports = new poulpe()
 },{"./render":2,"./search":3,"./store":4}],2:[function(require,module,exports){
 var store = require('./store');
 var render = function () {}
@@ -34,8 +32,14 @@ render.prototype.render = function () {
  * @description draw the html element
  */
 render.prototype.draw = function(a,b){
-	store.current = store.element.innerHTML.replace(a[0], b[a[1].trim()]);
-	store.element.innerHTML = store.current;
+	if(store.IsHtml){
+		store.current = store.element.innerHTML.replace(a[0], b[a[1].trim()]);
+		store.element.innerHTML = store.current;
+	} else {
+		store.current = store.element.text.replace(a[0], b[a[1].trim()]);
+		store.element.text = store.current;
+	}
+
 }
 module.exports = new render(); 
 },{"./store":4}],3:[function(require,module,exports){
@@ -46,16 +50,33 @@ var search = function () { }
  */
 search.prototype.s = function () {
 	if (store.el === null) return;
-	var el = document.querySelector(store.el);
-	var regex = /(?:{{([^}]+)}})/g
-	if (el.innerHTML.match(regex)) {
-		var m;
-		if (!store.old) store.old = el.innerHTML;
-		store.element = el;
-		while (m = regex.exec(el.innerHTML)) {
-			store.a.push(m);
+	var regex = /(?:{{([^}]+)}})/g;
+	if(store.IsHtml){
+		if (typeof store.el === 'string'){
+			var el = document.querySelector(store.el);
+		}else {
+			var el = store.el;
+		}
+		if (el.innerHTML.match(regex)) {
+			var m;
+			if (!store.old) store.old = el.innerHTML;
+			store.element = el;
+			while (m = regex.exec(el.innerHTML)) {
+				store.a.push(m);
+			}
+		}
+	}else {
+		var el = store.el;
+		if (el.text.match(regex)) {
+			var m;
+			if (!store.old) store.old = el.text;
+			store.element = el;
+			while (m = regex.exec(el.text)) {
+				store.a.push(m);
+			}
 		}
 	}
+
 }
 module.exports = new search()
 },{"./store":4}],4:[function(require,module,exports){
@@ -65,12 +86,16 @@ var store = function () {
 		this.a = [],
 		this.data = null,
 		this.el = null,
-		this.element = null;
+		this.element = null,
+		this.IsHtml = true;
 }
 
 /**
  * @param object 
- * @see set the config.
+ * {el=> string: id, HTML element, or object => el :{text: string }
+ * 
+ * , data: object, html? =>default true. }
+ * @desc set the config.
  */
 store.prototype.config = function (obj) {
 	if (!typeof obj === "object") {
@@ -85,9 +110,12 @@ store.prototype.config = function (obj) {
 	if (!typeof obj['data'] === "object") {
 		throw new Error("'Data' need a object");
 	}
+	if(obj['html'] != null && typeof obj['html'] === 'boolean'){
+		this.IsHtml = obj['html'];
+	}
 
-	this.el = data['el'];
-	this.data = data['data'];
+	this.el = obj['el'];
+	this.data = obj['data'];
 }
-module.exports = new store
+module.exports = new store()
 },{}]},{},[1]);

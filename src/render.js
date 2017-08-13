@@ -18,7 +18,13 @@ render.prototype.render = function () {
  * @description draw the html element
  */
 render.prototype.draw = function(a,b){
-	store.current = store.element.innerHTML.replace(a[0], b[a[1].trim()]);
-	store.element.innerHTML = store.current;
+	if(store.IsHtml){
+		store.current = store.element.innerHTML.replace(a[0], b[a[1].trim()]);
+		store.element.innerHTML = store.current;
+	} else {
+		store.current = store.element.text.replace(a[0], b[a[1].trim()]);
+		store.element.text = store.current;
+	}
+
 }
 module.exports = new render(); 

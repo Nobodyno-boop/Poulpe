@@ -4,12 +4,16 @@ var store = function () {
 		this.a = [],
 		this.data = null,
 		this.el = null,
-		this.element = null;
+		this.element = null,
+		this.IsHtml = true;
 }
 
 /**
  * @param object 
- * @see set the config.
+ * {el=> string: id, HTML element, or object => el :{text: string }
+ * 
+ * , data: object, html? =>default true. }
+ * @desc set the config.
  */
 store.prototype.config = function (obj) {
 	if (!typeof obj === "object") {
@@ -24,8 +28,11 @@ store.prototype.config = function (obj) {
 	if (!typeof obj['data'] === "object") {
 		throw new Error("'Data' need a object");
 	}
+	if(obj['html'] != null && typeof obj['html'] === 'boolean'){
+		this.IsHtml = obj['html'];
+	}
 
-	this.el = data['el'];
-	this.data = data['data'];
+	this.el = obj['el'];
+	this.data = obj['data'];
 }
-module.exports = new store
+module.exports = new store()
