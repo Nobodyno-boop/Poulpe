@@ -1,26 +1,27 @@
 var store = function () {
-	this.old = "",
+		this.old = "",
 		this.current = "",
 		this.a = [],
 		this.data = null,
 		this.el = null,
 		this.element = null,
 		this.IsHtml = true;
+		this.inProd = true;
 }
 
 /**
- * @param object 
+ * @param object
  * {el=> string: id, HTML element, or object => el :{text: string }
- * 
+ *
  * , data: object, html? =>default true. }
  * @desc set the config.
  */
 store.prototype.config = function (obj) {
-	if (!typeof obj === "object") {
-		throw new Error("Is not a object ! ");
+	if (!typeof obj === "object") { //
+
 	}
 	if (!obj['el']) {
-		throw new Error("You need define 'el'.");
+		throw new Error("You need define a value to  bind !");
 	}
 	if (!obj['data']) {
 		throw new Error("You need define 'data' object.");
@@ -28,11 +29,18 @@ store.prototype.config = function (obj) {
 	if (!typeof obj['data'] === "object") {
 		throw new Error("'Data' need a object");
 	}
-	if(obj['html'] != null && typeof obj['html'] === 'boolean'){
-		this.IsHtml = obj['html'];
+	if(typeof obj['data'] === "array"){
+		throw new Error("You can't use a array !")
+	}
+
+	if(typeof obj['el'] == "string" && !obj['el'].includes("#")){
+		this.IsHtml = false;
 	}
 
 	this.el = obj['el'];
 	this.data = obj['data'];
+	if(obj['prod']){
+		this.prod = true;
+	}
 }
 module.exports = new store()

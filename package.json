@@ -1,6 +1,6 @@
 {
   "name": "poulpe",
-  "version": "0.1.231",
+  "version": "0.1.3",
   "description": "poulpe || Data binding Javascript Project",
   "main": "./src/index.js",
   "bin": {
@@ -19,15 +19,17 @@
     "gulpfile.js",
     "package.json"
   ],
-  "dependencies": {},
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "build": "gulp js",
+    "clean" : "rm -r node_modules/"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
     "gulp": "^3.9.1",
     "gulp-server-livereload": "^1.9.2",
     "jsdom": "^11.1.0",
+    "mocha": "^5.0.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"

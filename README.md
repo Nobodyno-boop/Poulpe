@@ -1,4 +1,4 @@
-Poulpe 
+Poulpe
 ===
 Simple Data binding Javascript Project
 
@@ -6,9 +6,10 @@ Simple Data binding Javascript Project
   - Data binding with text, id or dom Element
   - Simple and speed.
   - Multi Option
+  - Event system
 
 # How to use
-import for the latest version 
+import for the latest version
 [poulpe.min.js](https://unpkg.com/poulpe@latest/dist/poulpe.min.js)
 
 See the [Option](#option)
@@ -19,7 +20,7 @@ See the [Option](#option)
 <div id="#e"> {{name}}</div>
 ```
 
-*JavaScript code*. 
+*JavaScript code*.
 ```JavaScript
 var poulpe = new poulpe();
 poulpe.run({
@@ -35,12 +36,14 @@ text
 ===
 
 ```JavaScript
-var text = "Hey i'm a {{animal}}"
+var text = "Hey i'm a {{animal}}";
 var poulpe = new poulpe();
+poulpe.on('bind', function(value) {
+  console.log(bind); // <= return Hey i'm a Octopus
+});
+
 poulpe.run({
-	"el": {
-		"text": text
-	},
+	"el": text
 	"data": {
 	 "animal": "Octopus"
 	}
@@ -73,19 +76,55 @@ Todo
 - *add "special" use for nodejs*
 - *Support XHR request.*
 - *Debug mod*
-- *Event system*
+- [x] Event system
 - *DomContentLoaded option*
+- add dev mod and prod mod.
+
+___
+# Event State
+
+  - search
+  - match
+  - bind
+
+  Search return the value match, one argrument.
+
+  Match return the search value and data, 2 argrument.
+
+  Bind is the latest value when the bind have been set, one argrument.
+
+  sample:
+
+```JavaScript
+
+var poulpe = new poulpe();
+poulpe.on('search', function(search){
+  console.log(search)
+})
 
 
+
+poulpe.on('match', function(a, b){
+  console.log("search value" + a + " data value" b)
+})
+
+
+poulpe.on('bind', function(bind){
+  console.log(bind)    
+});
+
+poulpe.run({
+  el: "Hello {{w}}",
+  data: {
+    "w": "You"
+  }
+});
+```
 
 # Option
 
-- el | Object
-	- HtmlElement ([sample](#dom))
-	- String (use the id. [sample](#id))
-	- Object 
-		- String : text ([sample](#text))
+- el  
+ - HtmlElement ([sample](#dom))
+ - String (use the id. [sample](#id))
+ - String ([sample](#text))
 - data : Object
-- html : Boolean
-	- true : default (use the document [id](#id) and [dom](#dom))
-	- false (use for [text](#text))

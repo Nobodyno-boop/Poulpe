@@ -1,36 +1,41 @@
 var store = require('./store');
+var event = require('./event');
 var search = function () { }
 /**
- * @desc search in the html this'{{}}' and store in array 
+ * @desc search in the html this'{{}}' and store in array
  */
+var regex = /(?:{{([^}]+)}})/g; // regex for text
 search.prototype.s = function () {
 	if (store.el === null) return;
-	var regex = /(?:{{([^}]+)}})/g;
 	if(store.IsHtml){
-		if (typeof store.el === 'string'){
-			var el = document.querySelector(store.el);
-		}else {
-			var el = store.el;
+		var el, m;
+		if (typeof store.el === 'string' && store.el.includes("#")){
+			 el = document.getElementById(store.el.replace("#", ""));
+			 console.log(el);
+		} else {
+			 el = store.el;
 		}
 		if (el.innerHTML.match(regex)) {
-			var m;
 			if (!store.old) store.old = el.innerHTML;
 			store.element = el;
-			while (m = regex.exec(el.innerHTML)) {
-				store.a.push(m);
-			}
+			wh(el.innerHTML);
 		}
-	}else {
+	} else {
 		var el = store.el;
-		if (el.text.match(regex)) {
+		if (el.match(regex)) {
 			var m;
-			if (!store.old) store.old = el.text;
+			if (!store.old) store.old = el;
 			store.element = el;
-			while (m = regex.exec(el.text)) {
-				store.a.push(m);
-			}
+			wh(el);
 		}
 	}
+}
 
+function wh(e){
+
+	while (m = regex.exec(e)) {
+		event.emit("search", m[0]);
+		store.a.push(m);
+	}
 }
 module.exports = new search()

@@ -5,21 +5,28 @@
 </head>
 <body>
 
-<div id="e">
+<div>
 	{{name}}
 
 
 </div>
 
-<script type="text/javascript" src="../dist/poulpe.js"></script>
+<script type="text/javascript" src="../dist/poulpe.min.js"></script>
 <script>
 	var poulpe = new poulpe()
+	var i = "bruh {{name}}";
 	var data  = {
-		el:"#e",
+		el: document.getElementsByTagName("div")[0],
 		data: {
-			name: "Hey"
+			name: "Hy"
 		}
 	}
+	poulpe.on("bind", function (e){
+		console.log(e)
+	});
+
+
+
 	poulpe.run(data)
 </script>
 </body>

@@ -7,33 +7,34 @@ describe('Poulpe Replace', function() {
     describe('#Text', function() {
       it('return the text with "Coucou"', function() {
         var t = {
-            el: {
-                text: "{{hey}}"
-            },
+            el: "{{hey}}",
             data: {
                 hey: "Coucou"
-            },
-            html: false
+            }
         }
-        var e = poulpe.run(t)
-        assert.equal("Coucou", t.el.text);
+        var e = new poulpe();
+        e.on('bind', (e) => {
+          assert.equal("Coucou", e);
+        })
+
+        e.run(t);
       });
-    }); 
+    });
     describe('#dom', function() {
         it('return the text with "Coucou"', function() {
-            var dom = new JSDOM("")
-            var div = dom.window.document.createElement('div');
-            div.id = "hey";
-            div.innerHTML = "{{hey}}";
+            var dom = new JSDOM("<div id='hey'>{{hey}}</div>");
+            var div = dom.window.document.getElementById("hey");
           var t = {
               el: div,
               data: {
                  hey: "Coucou"
               },
-              html: true //optionel default is true.
           }
-          var e = poulpe.run(t)
-          assert.equal("Coucou", t.data.hey);
+          var e = new poulpe();
+          e.on("bind", (e) => {
+            assert.equal("Coucou", e);
+          })
+        e.run(t)
         });
       });
 });
