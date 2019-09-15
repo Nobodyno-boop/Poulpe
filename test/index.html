@@ -1,33 +1,12 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Test file</title>
+
+
 </head>
 <body>
 
-<div>
-	{{name}}
+    <script src="../src/index.ts"></script>
 
-
-</div>
-
-<script type="text/javascript" src="../dist/poulpe.min.js"></script>
-<script>
-	var poulpe = new poulpe()
-	var i = "bruh {{name}}";
-	var data  = {
-		el: document.getElementsByTagName("div")[0],
-		data: {
-			name: "Hy"
-		}
-	}
-	poulpe.on("bind", function (e){
-		console.log(e)
-	});
-
-
-
-	poulpe.run(data)
-</script>
 </body>
+
 </html>

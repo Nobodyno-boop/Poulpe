@@ -1,3 +1,9 @@
+ - **v0.2.0 || 15-09-2019**
+    - Pass on typescript code with parcel-bundler.
+    - Clear code and increase the performance
+    - change all event states.
+    - change the constructor
+
  - **v0.1.3 || 22-03-18**
     - Fix support on nodejs
     - increase the bind
