@@ -3,6 +3,8 @@ Poulpe
 
 Simple Data binding Javascript Project
 
+[![CodeFactor](https://www.codefactor.io/repository/github/poulpinounette/poulpe/badge)](https://www.codefactor.io/repository/github/poulpinounette/poulpe)
+
 # Feature
   - Data binding with text or HTMLElement
   - Simple and speed.
