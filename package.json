@@ -1,14 +1,16 @@
 {
   "name": "poulpe",
-  "version": "0.2.0",
-  "description": "poulpe || Data binding Javascript Project",
+  "version": "0.2.1",
+  "description": "poulpe || Simple Data binding Javascript Project",
   "main": "./dist/index.js",
   "bin": {
     "poulpe": "./dist/index.js"
   },
   "keywords": [
     "poulpe",
-    "poulpi"
+    "poulpi",
+    "databinding",
+    "simple"
   ],
   "files": [
     "src/",
@@ -18,9 +20,9 @@
     "CHANGELOG.md",
     "package.json"
   ],
-  "type": "typings/index.d.ts",
+  "type": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm dist/bundle.js",
+    "clean": "rm -r dist",
     "start": "parcel test/test.html",
     "build-prod": "parcel build src/index.ts && tsc -d --emitDeclarationOnly"
   },
@@ -42,9 +44,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
-    "typescript": "^3.6.3"
-  },
-  "dependencies": {
-    "@types/node": "^12.7.5"
+    "typescript": "^3.6.3",
+     "@types/node": "^12.7.5"
   }
 }

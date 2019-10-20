@@ -1,4 +1,12 @@
- - **v0.2.0 || 15-09-2019**
+ - **v0.2.1 || 21-10-2019**
+    - remove the function getData.
+    - clear the dependencie.
+    - add tag "databinding, simple"
+    - remove todo from readme.md
+    - add todo.md
+    - change uppercase to lowercase for "changelog, readme"
+
+ - # **v0.2.0 || 15-09-2019**
     - Pass on typescript code with parcel-bundler.
     - Clear code and increase the performance
     - change all event states.

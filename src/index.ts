@@ -9,13 +9,13 @@ class Poulpe {
   private element: any;
   private data: any;
   private events:any = {};
+
   constructor(option: PoulpeOption) {
     this.element = option.element;
     this.data = option.data;
-
   }
 
-  public run() :void {
+  public run(): void {
     let matches = this.find();
     this.bind(matches);
     this.emit("end", this.element)
@@ -28,7 +28,7 @@ class Poulpe {
         let un = x
           .replace("{{", "")
           .replace("}}", "").trim();
-        let d = this.getData(un);
+        let d = this.data[un];
         let obj = { data: d, object: x };
         this.emit("search", obj);
 
@@ -38,10 +38,6 @@ class Poulpe {
       this.emit("find", newmatch.filter((x:any) => x !== null));
       return newmatch;
     }
-  }
-
-  private getData(name:string) :string  {
-    return typeof this.data[name] === "undefined" ? null : this.data[name];
   }
 
   private bind(matches:[]) {

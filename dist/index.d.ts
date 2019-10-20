@@ -10,7 +10,6 @@ declare class Poulpe {
     constructor(option: PoulpeOption);
     run(): void;
     private find;
-    private getData;
     private bind;
     private getText;
     on(event: any, listener: any): () => void;

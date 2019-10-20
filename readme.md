@@ -1,5 +1,6 @@
 Poulpe
 ===
+
 Simple Data binding Javascript Project
 
 # Feature
@@ -9,10 +10,10 @@ Simple Data binding Javascript Project
   - Event system
 
 # How to use
-import for the latest version
+import for the latest version from unpkg cdn
 [poulpe.js](https://unpkg.com/poulpe@latest/dist/index.js)
 
-See the [Option](#option)
+and see sample.
 
 # Dom
 *HTML code*.<br />
@@ -49,18 +50,9 @@ poulpe.on('end', (x) => {
 poulpe.run();
 ```
 
-
-
   Other
 ===
- [change log](https://github.com/Poulpinounette/Poulpe/blob/master/CHANGELOG.md)
-
-Todo
-- *add "special" use for nodejs*
-- *Debug mod*
-- [x] Event system
-- *DomContentLoaded option*
-- add dev mod and prod mod.
+ [change log](https://github.com/Poulpinounette/Poulpe/blob/master/CHANGELOG.md#)
 
 ___
 # Event State
@@ -105,3 +97,6 @@ poulpe.run();
  - HTMLElement ([sample](#dom))
  - String (use the id. [sample](#text))
 - data : Object ([sample](#dom))
+
+
+Poulpe use Parcel for build this package.
